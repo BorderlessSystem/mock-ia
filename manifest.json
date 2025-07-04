@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Centralizador HTML Visual",
+  "version": "1.0",
+  "description": "Extensão para centralizar e otimizar elementos HTML visualmente",
+  "permissions": ["scripting", "activeTab"],
+  "host_permissions": ["<all_urls>"],
+  "devtools_page": "devtools.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Centralizador HTML"
+  }
+}
